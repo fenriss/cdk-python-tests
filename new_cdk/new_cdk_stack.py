@@ -3,10 +3,10 @@ from aws_cdk import (
     RemovalPolicy,
     Stack,
     # aws_sqs as sqs,
-    aws_s3 as s3,
-    aws_lambda as _lambda,
+    aws_s3 as s3
 )
 from constructs import Construct
+from . import lambda_service as lambda_service
 
 class NewCdkStack(Stack):
 
@@ -23,3 +23,7 @@ class NewCdkStack(Stack):
 
         s3.Bucket(self, "MyBucket", versioned=True,
             removal_policy=RemovalPolicy.DESTROY)
+        
+        lambda_service.LambdaService(self, "My Lambda Service")
+        
+    
