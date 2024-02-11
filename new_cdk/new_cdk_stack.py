@@ -3,11 +3,11 @@ from aws_cdk import (
     RemovalPolicy,
     Stack,
     # aws_sqs as sqs,
-    # aws_s3 as s3
+    aws_s3 as s3,
 )
 from constructs import Construct
 
-class CdkPythonTestsStack(Stack):
+class NewCdkStack(Stack):
 
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
@@ -16,11 +16,9 @@ class CdkPythonTestsStack(Stack):
 
         # example resource
         # queue = sqs.Queue(
-        #     self, "CdkPythonTestsQueue",
+        #     self, "NewCdkQueue",
         #     visibility_timeout=Duration.seconds(300),
         # )
 
-        #s3.Bucket(self, "MyFirstBucket",
-        #    versioned=True,
-        #    removal_policy=RemovalPolicy.DESTROY
-        #)
+        s3.Bucket(self, "MyBucket", versioned=True,
+            removal_policy=RemovalPolicy.DESTROY)

@@ -3,11 +3,11 @@ import os
 
 import aws_cdk as cdk
 
-from cdk_python_tests.cdk_python_tests_stack import CdkPythonTestsStack
+from new_cdk.new_cdk_stack import NewCdkStack
 
 
 app = cdk.App()
-CdkPythonTestsStack(app, "CdkPythonTestsStack",
+NewCdkStack(app, "NewCdkStack",
     # If you don't specify 'env', this stack will be environment-agnostic.
     # Account/Region-dependent features and context lookups will not work,
     # but a single synthesized template can be deployed anywhere.
